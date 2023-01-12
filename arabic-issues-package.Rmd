@@ -1,0 +1,3 @@
+# Arabic Issues - Package {#arabic-issues-package}
+
+It is a well-documented fact that R (and computers in general), are racist. This leads to many, many issues in the creation of Arabic graphs. Worse, issues are often OS-specific. This chapter reviews issues and solutions you may run into when using the `plot_` functions provided by the `AarbBarometR` package to create a graph in Arabic. Chapter \@ref(arabic-translation) reviews how to "translate" a graph from English to Arabic, emphasizing common points at which you may run into trouble.

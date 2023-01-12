@@ -1,0 +1,41 @@
+--- 
+title: "Common Arab Barometer Graph Problems and How to (Mostly) Solve Them"
+author: "MaryClare Roche"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a reference for issues that commonly occur when using the ArabBarometR package, or creating graphs for Arab Barometer in general.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# About
+
+This guide is meant to help address common problems users run into with the `ArabBarometR` package.
+
+
+```{r load-data, include=FALSE}
+library(ArabBarometR)
+library(dplyr)
+library(ggplot2)
+
+abwave7_eng <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB7/Data/RELEASE_DATA/Latest/AB7_ENG_Release_V8.dta")
+
+abwave7_ara <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB7/Data/RELEASE_DATA/Latest/AB7_ARA_Release_V8.dta")
+
+
+trend_data_ENG <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB7/Data Books/MEPI_Data_Book_Code/Trend Data/EnglishTrend.dta")
+
+all_waves_ENG <- trend_data_ENG %>%
+  split(f = .$WAVE)
+
+trend_data_ARA <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB7/Data Books/MEPI_Data_Book_Code/Trend Data/ArabicTrend.dta")
+
+all_waves_ARA <- trend_data_ARA %>%
+  split(f = .$WAVE)
+
+```
