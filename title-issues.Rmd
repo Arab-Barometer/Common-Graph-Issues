@@ -1,5 +1,9 @@
 # Title & Subtitle Issues {#title-issues}
 
+```{r include=FALSE}
+library(ArabBarometR)
+```
+
 Title and subtitle issues often go hand-in-hand, and the process for solving them is often the same, so both will be addressed here. As shorthand, the guide will use "title" in place of "title and subtitle" unless otherwise explicitly stated.
 
 -   [Title is not showing up](#no-title)
