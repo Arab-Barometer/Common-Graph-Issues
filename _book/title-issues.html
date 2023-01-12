@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-01-11" />
+<meta name="date" content="2023-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -218,10 +218,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-3"><a href="title-issues.html#cb2-3" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb2-4"><a href="title-issues.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>,</span>
 <span id="cb2-5"><a href="title-issues.html#cb2-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.language =</span> <span class="st">&quot;ar&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning in .Primitive(&quot;max&quot;)(): no non-missing arguments to max; returning
-## -Inf</code></pre>
-<pre><code>## Warning in .Primitive(&quot;min&quot;)(): no non-missing arguments to min; returning
-## Inf</code></pre>
+<pre><code>## Warning in .Primitive(&quot;max&quot;)(): no non-missing arguments to max; returning -Inf</code></pre>
+<pre><code>## Warning in .Primitive(&quot;min&quot;)(): no non-missing arguments to min; returning Inf</code></pre>
 <pre><code>## Error in upgradeUnit.default(-Inf): Not a unit object</code></pre>
 <p>You get a graph and the numbers are correct. What gives?</p>
 <p>What gives is that <code>Q2061A</code> is a <strong>nominal question</strong>. The summary functions in the <code>ArabBarometR</code> package only summarize the response values of <code>1</code> for nominal questions. You see the correct values because you are comparing the first category.</p>
