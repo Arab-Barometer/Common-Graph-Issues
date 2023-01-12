@@ -3,7 +3,7 @@
 Title and subtitle issues often go hand-in-hand, and the process for solving them is often the same, so both will be addressed here. As shorthand, the guide will use "title" in place of "title and subtitle" unless otherwise explicitly stated.
 
 -   [Title is not showing up](#no-title)
--   Title is wrong
+-   [Title is wrong](#wrong-title)
 -   Title does not fit on graph
 -   Title does not display correctly due to language issues
 -   Only title or only subtitle is showing up
@@ -248,3 +248,5 @@ calculate_smry_comp(abwave7_eng,
                  .language = "en")
 
 ```
+
+## Title/Subtitle is Wrong {#wrong-title}

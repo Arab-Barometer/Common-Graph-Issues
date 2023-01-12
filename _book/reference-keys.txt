@@ -13,5 +13,4 @@ plot-the-data-frame
 arabic-code
 create-a-data-frame-1
 plot-the-data-frame-1
-arabic-theme
 translated-graph

@@ -258,7 +258,7 @@ Now for plotting.
 
 Unlike creating the data frame, you cannot simply plug the Arabic data frame in for the English data frame and call it a day. The code below is exactly the code from creating the English graph, only the Arabic data frame is being piped in. The code chunk is numbered. When referencing lines of code, this is the code chunk being referred to.
 
-```{r arabic-translations-13, fig.dim=c(13,12), attr.source='.numberLines'}
+```{r arabic-translations-13, fig.dim=c(13,12), attr.source='.numberLines',eval=FALSE}
 
 # Data Frame:
 Q6013_trend %>% 
@@ -316,6 +316,10 @@ Q6013_trend %>%
   theme_ab_english()
 
 
+```
+
+```{r arabic-translation-23, fig.dim=c(13,12),echo=FALSE}
+knitr::include_graphics("Untranslated_Arabic_Graph.png")
 ```
 
 #### English to Arabic Text {-}
@@ -414,11 +418,11 @@ geom_text(aes(label = ifelse(Q601_3 == 0, "1>", Q601_3),
 
 Aside from changing the font, the direction of the "less than" sign is also changed.
 
-#### Arabic Theme
+#### Arabic Theme {-}
 
 Finally, the `ArabBarometR` package provides separate ggplot themes for English and Arabic graphs. The theme controls the font, size, and placement of title elements. See line 54.
 
-```{r arabic-translation-19}
+```{r arabic-translation-19,eval=FALSE}
 
 # English
 theme_ab_english()
@@ -455,7 +459,7 @@ arabic_subtitle <- paste0(arabic_subtitle," %")
 
 
 
-```{r arabic-translation-21, fig.dim=c(13,12)}
+```{r arabic-translation-21, fig.dim=c(13,12),eval=FALSE}
 Q6013_trend %>% 
   
   # ggplot base
@@ -510,4 +514,72 @@ Q6013_trend %>%
 
 ```{r arabic-translation-22, fig.dim=c(13,12),echo=FALSE}
 knitr::include_graphics("Translated_Arabic_Graph.png")
+```
+
+
+```{r arabic-translation-24,include=FALSE}
+
+example_summary_eng <- calculate_smry_individual(abwave7_eng,"Q101","Algeria")
+
+#English
+example_summary_eng %>%
+  
+  ggplot(aes(x = forcats::fct_rev(haven::as_factor(Q101)),
+                               y = Percent),
+             fill = ArabBarometer_colors("AB blue")) +
+  
+  geom_col(fill = ArabBarometer_colors("AB blue")) +
+  
+  coord_flip() +
+  
+  scale_x_discrete(labels = function(x) stringr::str_wrap(x,width = 20)) +
+  
+  scale_y_continuous(limits = c(0,100)) +
+  
+  geom_text(aes(label = ifelse(Percent == 0, "<1", Percent),
+                family = 'Montserrat'),
+            size = 6,
+            hjust = -1,
+            color = ArabBarometer_colors("text grey")) +
+  
+  labs(title    = "Current economic situation in the country",
+       subtitle = "% saying very good or good",
+       caption  = "Arab Barometer Wave VII, Algeria (2022)") +
+  
+  theme_ab_english()
+
+# Arabic
+
+Algeria <- get_countries(abwave7_ara)[1]
+example_summary_ara <- calculate_smry_individual(abwave7_ara,"Q101",Algeria)
+
+example_summary_ara %>%
+  
+  ggplot(aes(x = forcats::fct_rev(haven::as_factor(Q101)),
+             y = Percent),
+             fill = ArabBarometer_colors("AB blue")) +
+
+  geom_col(fill = ArabBarometer_colors("AB blue")) +
+  
+  scale_x_discrete(position = "top",
+                   labels = function(x) stringr::str_wrap(x,width = 20)) +
+  
+  scale_y_reverse(limits = c(100,0)) +
+  
+  coord_flip() +
+  
+  geom_text(aes(label = ifelse(Percent==0, "1>", Percent),
+                family = 'Tajawal'),
+            size = 6,
+            hjust = 1.5,
+            color = ArabBarometer_colors("text grey")) +
+  
+  labs(title    = "الوضع الاقتصادي العام في بلدك حاليا",
+       subtitle = paste("من يقولون إنه جيد جدا أو جيد","%"),
+       caption  = paste("2022","الباروميتر العربي")
+       ) +
+
+      theme_ab_arabic()
+
+
 ```

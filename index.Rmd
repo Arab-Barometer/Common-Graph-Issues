@@ -13,12 +13,12 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
-# About
+# About {-}
 
-This guide is meant to help address common problems users run into with the `ArabBarometR` package.
+This guide is meant to help address common problems users run into with the `ArabBarometR` package. Examples in this guide use data from Arab Barometer Wave VII.
 
 
-```{r load-data, include=FALSE}
+```{r load-data, include=FALSE,cache=TRUE}
 library(ArabBarometR)
 library(dplyr)
 library(ggplot2)
