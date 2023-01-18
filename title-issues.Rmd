@@ -8,9 +8,9 @@ Title and subtitle issues often go hand-in-hand, and the process for solving the
 
 -   [Title is not showing up](#no-title)
 -   [Title is wrong](#wrong-title)
--   Title does not fit on graph
--   Title does not display correctly due to language issues
--   Only title or only subtitle is showing up
+-   [Title does not fit on graph](#title-too-large)
+-   [Title does not display correctly due to language issues](##title-render-issue)
+-   [Only title or only subtitle is showing up](##title-OR-subtitle)
 
 ## Title/subtitle is not showing up {#no-title}
 
@@ -35,14 +35,12 @@ This is most often the case when trying to create a comparative plot for the fir
 # English
 calculate_smry_comp(abwave7_eng,
                     "Q2061A") %>%
-  plot_smry_comp(.caption = "Arab Barometer Wave VII (2021-2022)",
-                 .language = "en")
+  plot_smry_comp(.caption = "Arab Barometer Wave VII (2021-2022)")
 
 # Arabic
 calculate_smry_comp(abwave7_ara,
                     "Q2061A") %>%
-  plot_smry_comp(.caption = "Arab Barometer Wave VII (2021-2022)",
-                 .language = "ar")
+  plot_smry_comp(.caption = "Arab Barometer Wave VII (2021-2022)")
 
 ```
 
@@ -76,16 +74,14 @@ abwave7_eng <- dummy_all(abwave7_eng,Q2061A)
 
 calculate_smry_comp(abwave7_eng,
                     "Q2061A_1") %>%
-  plot_smry_comp(.caption = "Arab Barometer Wave VII (2021-2022)",
-                 .language = "en")
+  plot_smry_comp(.caption = "Arab Barometer Wave VII (2021-2022)")
 
 # Arabic
 abwave7_ara <- dummy_all(abwave7_ara,Q2061A)
 
 calculate_smry_comp(abwave7_ara,
                     "Q2061A_1") %>%
-  plot_smry_comp(.caption = "Arab Barometer Wave VII (2021-2022)",
-                 .language = "ar")
+  plot_smry_comp(.caption = "Arab Barometer Wave VII (2021-2022)")
 ```
 
 Fixed!
@@ -188,8 +184,7 @@ abwave7_eng$bad_economy <- ifelse(abwave7_eng$Q101 %in% 3:4, 1, 0)
 calculate_smry_comp(abwave7_eng,
                     "bad_economy",
                     .type = "dichotomous") %>%
-  plot_smry_comp(.caption = "Arab Barometer Wave VII (2021-2022)",
-                 .language = "en")
+  plot_smry_comp(.caption = "Arab Barometer Wave VII (2021-2022)")
 
 ```
 
@@ -206,8 +201,7 @@ calculate_smry_comp(abwave7_eng,
                     .type = "dichotomous") %>%
   plot_smry_comp(.title = "How is the economy doing in your country?",
                  .subtitle = "% saying bad or very bad",
-                 .caption = "Arab Barometer Wave VII (2021-2022)",
-                 .language = "en")
+                 .caption = "Arab Barometer Wave VII (2021-2022)")
 
 ```
 
@@ -233,8 +227,7 @@ calculate_smry_comp(abwave7_eng,
                     "Q2061A_1") %>%
   plot_smry_comp(.title = FALSE,
                  .subtitle = F,
-                 .caption = "Arab Barometer Wave VII (2021-2022)",
-                 .language = "en")
+                 .caption = "Arab Barometer Wave VII (2021-2022)")
 
 ```
 
@@ -248,14 +241,77 @@ calculate_smry_comp(abwave7_eng,
                     "Q2061A_1") %>%
   plot_smry_comp(.title = FALSE,
                  .subtitle = T,
-                 .caption = "Arab Barometer Wave VII (2021-2022)",
-                 .language = "en")
+                 .caption = "Arab Barometer Wave VII (2021-2022)")
 
 ```
 
 ## Title/Subtitle is Wrong {#wrong-title}
 
-There are a few ways the title and subtitle may appear incorrect on the graph.
+There are three ways the title and subtitle may appear incorrect on the graph.
 
-* User supplied incorrect title
-* Wrong 
+* [User supplied incorrect title](#wrong-title-user)
+* [Wrong title in title sheets](#wrong-title-package)
+* Title in wrong language
+
+### Wrong Title, User Error {#wrong-title-user}
+
+The first place to begin figuring out errors is always your own code. Misspellings are exceedingly common when we're trying to get many things done at once.
+
+For example, say you want to emphasize that we asked what people thought was the most important challenge facing not just any country, but *their* country, so you want to change the title of a graph for Q2061A from "Most important challenge facing **the** country" to "Most important challenge facing **your** country". Say you use the following code.
+
+```{r wrong-title-1, fig.dim=c(13,12)}
+
+calculate_smry_comp(abwave7_eng,
+                    "Q2061A_1") %>%
+  plot_smry_comp(.title = "Most important challeng facing your country",
+                 .caption = "Arab Barometer Wave VII (2021-2022)")
+
+```
+
+What's wrong?
+
+Good catch- "challenge" is spelled wrong.
+
+**How to Fix It** Simply correct your spelling.
+
+```{r wrong-title-2, fig.dim=c(13,12)}
+
+calculate_smry_comp(abwave7_eng,
+                    "Q2061A_1") %>%
+  plot_smry_comp(.title = "Most important challenge facing your country",
+                 .caption = "Arab Barometer Wave VII (2021-2022)")
+
+```
+
+### Wrong Title, Package Error {#wrong-title-package}
+
+If you are using the default title for the question and it appears incorrectly, there is likely an issue with the titles sheet. You can be sure of this using the `title_function()` and `subtitle_function()` discussed in section \@ref(wrong-num-titlesheet). The text supplied by these functions is the default title and subtitle for the graphs.
+
+**How to Fix It** Follow the same steps described in section \@ref(wrong-num-titlesheet).
+
+## Title/subtitle Does Not Fit {#title-too-large}
+
+If for whatever reason you are creating a graph with an extremely long title using many words, the title may run off the graph. Most plotting functions wrap titles by default, but some do not^[Eventually, they all will.].
+
+```{r long-title-1, fig.dim=c(13,12)}
+
+plot_multiquestions_comp(abwave7_eng,
+                        c("Q101",
+                          "Q102"),
+                        c("Current economic system",
+                          "Future economic system"),
+                        .title = "An extremely long title with lots and lots and lots and lots and lots and lots and lots and lots of words.",
+                        .subtitle = "% of people who say they absolutely, unequivicably want an even longer subtitle",
+                        .caption = "Arab Barometer Wave VII (2021-2022)",
+                        .language = "en")
+
+calculate_smry_comp(abwave7_eng,
+                    "Q2061A_1") %>%
+  plot_smry_comp(.title = ,
+                 .caption = "Arab Barometer Wave VII (2021-2022)")
+
+```
+
+## Title/subtitle Displays Incorrectly - Language {#title-render-issue}
+
+## Only Title OR Subtitle Showing Up {#title-OR-subtitle}

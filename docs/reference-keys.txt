@@ -5,6 +5,11 @@ wrong-num-titlesheet
 no-auto-title
 default-change
 wrong-title
+wrong-title-user
+wrong-title-package
+title-too-large
+title-render-issue
+title-OR-subtitle
 arabic-issues-package
 arabic-translation
 english-code

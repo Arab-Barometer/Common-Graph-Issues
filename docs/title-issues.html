@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Title &amp; Subtitle Issues | Common Arab Barometer Graph Problems and How to (Mostly) Solve Them</title>
-  <meta name="description" content="This is a reference for issues that commonly occur when using the ArabBarometR package, or creating graphs for Arab Barometer in general." />
+  <meta name="description" content="Chapter 1 Title &amp; Subtitle Issues | Common Arab Barometer Graph Problems and How to (Mostly) Solve Them" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Title &amp; Subtitle Issues | Common Arab Barometer Graph Problems and How to (Mostly) Solve Them" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="This is a reference for issues that commonly occur when using the ArabBarometR package, or creating graphs for Arab Barometer in general." />
+  
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 1 Title &amp; Subtitle Issues | Common Arab Barometer Graph Problems and How to (Mostly) Solve Them" />
   
-  <meta name="twitter:description" content="This is a reference for issues that commonly occur when using the ArabBarometR package, or creating graphs for Arab Barometer in general." />
+  
   
 
 <meta name="author" content="MaryClare Roche" />
@@ -146,7 +146,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1.3" data-path="title-issues.html"><a href="title-issues.html#no-auto-title"><i class="fa fa-check"></i><b>1.1.3</b> No Automatic Title/Subtitle</a></li>
 <li class="chapter" data-level="1.1.4" data-path="title-issues.html"><a href="title-issues.html#default-change"><i class="fa fa-check"></i><b>1.1.4</b> Default Change</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="title-issues.html"><a href="title-issues.html#wrong-title"><i class="fa fa-check"></i><b>1.2</b> Title/Subtitle is Wrong</a></li>
+<li class="chapter" data-level="1.2" data-path="title-issues.html"><a href="title-issues.html#wrong-title"><i class="fa fa-check"></i><b>1.2</b> Title/Subtitle is Wrong</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="title-issues.html"><a href="title-issues.html#wrong-title-user"><i class="fa fa-check"></i><b>1.2.1</b> Wrong Title, User Error</a></li>
+<li class="chapter" data-level="1.2.2" data-path="title-issues.html"><a href="title-issues.html#wrong-title-package"><i class="fa fa-check"></i><b>1.2.2</b> Wrong Title, Package Error</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="title-issues.html"><a href="title-issues.html#title-too-large"><i class="fa fa-check"></i><b>1.3</b> Title/subtitle Does Not Fit</a></li>
+<li class="chapter" data-level="1.4" data-path="title-issues.html"><a href="title-issues.html#title-render-issue"><i class="fa fa-check"></i><b>1.4</b> Title/subtitle Displays Incorrectly - Language</a></li>
+<li class="chapter" data-level="1.5" data-path="title-issues.html"><a href="title-issues.html#title-OR-subtitle"><i class="fa fa-check"></i><b>1.5</b> Only Title OR Subtitle Showing Up</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="arabic-issues-package.html"><a href="arabic-issues-package.html"><i class="fa fa-check"></i><b>2</b> Arabic Issues - Package</a></li>
 <li class="chapter" data-level="3" data-path="arabic-translation.html"><a href="arabic-translation.html"><i class="fa fa-check"></i><b>3</b> Translating Arabic Plots</a>
@@ -165,7 +172,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -189,9 +195,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="title-issues.html#no-title">Title is not showing up</a></li>
 <li><a href="title-issues.html#wrong-title">Title is wrong</a></li>
-<li>Title does not fit on graph</li>
-<li>Title does not display correctly due to language issues</li>
-<li>Only title or only subtitle is showing up</li>
+<li><a href="title-issues.html#title-too-large">Title does not fit on graph</a></li>
+<li><a href="#id_#title-render-issue">Title does not display correctly due to language issues</a></li>
+<li><a href="#id_#title-OR-subtitle">Only title or only subtitle is showing up</a></li>
 </ul>
 <div id="no-title" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Title/subtitle is not showing up<a href="title-issues.html#no-title" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -211,14 +217,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="title-issues.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># English</span></span>
 <span id="cb1-2"><a href="title-issues.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(abwave7_eng,</span>
 <span id="cb1-3"><a href="title-issues.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="title-issues.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>,</span>
-<span id="cb1-5"><a href="title-issues.html#cb1-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.language =</span> <span class="st">&quot;en&quot;</span>)</span></code></pre></div>
+<span id="cb1-4"><a href="title-issues.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/no-title-1-1.png" width="1248" /></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="title-issues.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Arabic</span></span>
 <span id="cb2-2"><a href="title-issues.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(abwave7_ara,</span>
 <span id="cb2-3"><a href="title-issues.html#cb2-3" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-4"><a href="title-issues.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>,</span>
-<span id="cb2-5"><a href="title-issues.html#cb2-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.language =</span> <span class="st">&quot;ar&quot;</span>)</span></code></pre></div>
+<span id="cb2-4"><a href="title-issues.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in .Primitive(&quot;max&quot;)(): no non-missing arguments to max;
 ## returning -Inf</code></pre>
 <pre><code>## Warning in .Primitive(&quot;min&quot;)(): no non-missing arguments to min;
@@ -242,16 +246,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-3"><a href="title-issues.html#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="title-issues.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(abwave7_eng,</span>
 <span id="cb8-5"><a href="title-issues.html#cb8-5" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Q2061A_1&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb8-6"><a href="title-issues.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>,</span>
-<span id="cb8-7"><a href="title-issues.html#cb8-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.language =</span> <span class="st">&quot;en&quot;</span>)</span></code></pre></div>
+<span id="cb8-6"><a href="title-issues.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/no-title-3-1.png" width="1248" /></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="title-issues.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Arabic</span></span>
 <span id="cb9-2"><a href="title-issues.html#cb9-2" aria-hidden="true" tabindex="-1"></a>abwave7_ara <span class="ot">&lt;-</span> <span class="fu">dummy_all</span>(abwave7_ara,Q2061A)</span>
 <span id="cb9-3"><a href="title-issues.html#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="title-issues.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(abwave7_ara,</span>
 <span id="cb9-5"><a href="title-issues.html#cb9-5" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Q2061A_1&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-6"><a href="title-issues.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>,</span>
-<span id="cb9-7"><a href="title-issues.html#cb9-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.language =</span> <span class="st">&quot;ar&quot;</span>)</span></code></pre></div>
+<span id="cb9-6"><a href="title-issues.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/no-title-3-2.png" width="1248" /></p>
 <p>Fixed!</p>
 </div>
@@ -329,8 +331,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb26-3"><a href="title-issues.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(abwave7_eng,</span>
 <span id="cb26-4"><a href="title-issues.html#cb26-4" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;bad_economy&quot;</span>,</span>
 <span id="cb26-5"><a href="title-issues.html#cb26-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">.type =</span> <span class="st">&quot;dichotomous&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb26-6"><a href="title-issues.html#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>,</span>
-<span id="cb26-7"><a href="title-issues.html#cb26-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.language =</span> <span class="st">&quot;en&quot;</span>)</span></code></pre></div>
+<span id="cb26-6"><a href="title-issues.html#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/no-title-6-1.png" width="1248" /></p>
 <p>Essentially, inside the <code>plot_smry_comp()</code> function, the functions <code>title_function()</code> and <code>subtitle_function()</code> are once again returning nothing, since the variable “bad_economy” is not in the title data frames.</p>
 <p><strong>How to Fix It</strong> In this case, you must supply your own title. This is a feature that will remain constant. It is unreasonable to expect the package to predict exactly what kind of custom graphs you will produce. Just remember to include a title!</p>
@@ -341,8 +342,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb27-5"><a href="title-issues.html#cb27-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">.type =</span> <span class="st">&quot;dichotomous&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb27-6"><a href="title-issues.html#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.title =</span> <span class="st">&quot;How is the economy doing in your country?&quot;</span>,</span>
 <span id="cb27-7"><a href="title-issues.html#cb27-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.subtitle =</span> <span class="st">&quot;% saying bad or very bad&quot;</span>,</span>
-<span id="cb27-8"><a href="title-issues.html#cb27-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>,</span>
-<span id="cb27-9"><a href="title-issues.html#cb27-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.language =</span> <span class="st">&quot;en&quot;</span>)</span></code></pre></div>
+<span id="cb27-8"><a href="title-issues.html#cb27-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/no-title-7-1.png" width="672" /></p>
 </div>
 <div id="default-change" class="section level3 hasAnchor" number="1.1.4">
@@ -356,8 +356,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb29-3"><a href="title-issues.html#cb29-3" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Q2061A_1&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb29-4"><a href="title-issues.html#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.title =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb29-5"><a href="title-issues.html#cb29-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.subtitle =</span> F,</span>
-<span id="cb29-6"><a href="title-issues.html#cb29-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>,</span>
-<span id="cb29-7"><a href="title-issues.html#cb29-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.language =</span> <span class="st">&quot;en&quot;</span>)</span></code></pre></div>
+<span id="cb29-6"><a href="title-issues.html#cb29-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/no-title-9-1.png" width="1248" /></p>
 <p><strong>How to Fix It</strong> Set the <code>.title</code> and/or <code>.subtitle</code> parameter to <code>TRUE</code> or <code>T</code>.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="title-issues.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># English</span></span>
@@ -365,18 +364,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb30-3"><a href="title-issues.html#cb30-3" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Q2061A_1&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb30-4"><a href="title-issues.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.title =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb30-5"><a href="title-issues.html#cb30-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.subtitle =</span> T,</span>
-<span id="cb30-6"><a href="title-issues.html#cb30-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>,</span>
-<span id="cb30-7"><a href="title-issues.html#cb30-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.language =</span> <span class="st">&quot;en&quot;</span>)</span></code></pre></div>
+<span id="cb30-6"><a href="title-issues.html#cb30-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/no-title-10-1.png" width="1248" /></p>
 </div>
 </div>
 <div id="wrong-title" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Title/Subtitle is Wrong<a href="title-issues.html#wrong-title" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are a few ways the title and subtitle may appear incorrect on the graph.</p>
+<p>There are three ways the title and subtitle may appear incorrect on the graph.</p>
 <ul>
-<li>User supplied incorrect title</li>
-<li>Wrong</li>
+<li><a href="title-issues.html#wrong-title-user">User supplied incorrect title</a></li>
+<li><a href="title-issues.html#wrong-title-package">Wrong title in title sheets</a></li>
+<li>Title in wrong language</li>
 </ul>
+<div id="wrong-title-user" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Wrong Title, User Error<a href="title-issues.html#wrong-title-user" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The first place to begin figuring out errors is always your own code. Misspellings are exceedingly common when we’re trying to get many things done at once.</p>
+<p>For example, say you want to emphasize that we asked what people thought was the most important challenge facing not just any country, but <em>their</em> country, so you want to change the title of a graph for Q2061A from “Most important challenge facing <strong>the</strong> country” to “Most important challenge facing <strong>your</strong> country”. Say you use the following code.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="title-issues.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(abwave7_eng,</span>
+<span id="cb31-2"><a href="title-issues.html#cb31-2" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Q2061A_1&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="title-issues.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.title =</span> <span class="st">&quot;Most important challeng facing your country&quot;</span>,</span>
+<span id="cb31-4"><a href="title-issues.html#cb31-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/wrong-title-1-1.png" width="1248" /></p>
+<p>What’s wrong?</p>
+<p>Good catch- “challenge” is spelled wrong.</p>
+<p><strong>How to Fix It</strong> Simply correct your spelling.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="title-issues.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(abwave7_eng,</span>
+<span id="cb32-2"><a href="title-issues.html#cb32-2" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;Q2061A_1&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="title-issues.html#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.title =</span> <span class="st">&quot;Most important challenge facing your country&quot;</span>,</span>
+<span id="cb32-4"><a href="title-issues.html#cb32-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VII (2021-2022)&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/wrong-title-2-1.png" width="1248" /></p>
+</div>
+<div id="wrong-title-package" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Wrong Title, Package Error<a href="title-issues.html#wrong-title-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you are using the default title for the question and it appears incorrectly, there is likely an issue with the titles sheet. The solution is similar to <span class="math inline">\(\ref{no-title-4}\)</span>.</p>
+</div>
+</div>
+<div id="title-too-large" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Title/subtitle Does Not Fit<a href="title-issues.html#title-too-large" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="title-render-issue" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Title/subtitle Displays Incorrectly - Language<a href="title-issues.html#title-render-issue" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="title-OR-subtitle" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Only Title OR Subtitle Showing Up<a href="title-issues.html#title-OR-subtitle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -424,8 +454,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Arab-Baromter/Common-Graph-Issues/edit/BRANCH/title-issues.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
@@ -447,6 +477,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

@@ -2,15 +2,7 @@
 title: "Common Arab Barometer Graph Problems and How to (Mostly) Solve Them"
 author: "MaryClare Roche"
 date: "`r Sys.Date()`"
-#site: bookdown::bookdown_site
-documentclass: book
-#bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
-description: |
-   This is a reference for issues that commonly occur when using the ArabBarometR package, or creating graphs for Arab Barometer in general.
-# link-citations: yes
-# github-repo: rstudio/bookdown-demo
+site: bookdown::bookdown_site
 ---
 
 # About {-}
