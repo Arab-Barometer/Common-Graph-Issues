@@ -254,3 +254,8 @@ calculate_smry_comp(abwave7_eng,
 ```
 
 ## Title/Subtitle is Wrong {#wrong-title}
+
+There are a few ways the title and subtitle may appear incorrect on the graph.
+
+* User supplied incorrect title
+* Wrong 
